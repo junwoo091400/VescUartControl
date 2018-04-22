@@ -143,8 +143,9 @@ int PackSendPayload(uint8_t* payload, int lenPay) {
 
 #endif // DEBUG
 
-	//Sending package
-	SERIALIO.write(messageSend, count);
+	//Sending package, consider 'SoftwareSerial', Hardware Serial's internal is same as this anyway.
+	for(int i = 0 ; i < count ; ++i)
+		SERIALIO.write(messageSend[i]);
 
 
 	//Returns number of send bytes
