@@ -36,7 +36,8 @@ If you want to use debug, uncomment DEBUGSERIAL and define a port.*/
 #endif
 
 #ifdef ARDUINO_AVR_NANO
-#define SERIALIO Serial  
+SoftwareSerial mySerial (2, 3); // Hardcoded software-serial.
+#define SERIALIO mySerial
 #define DEBUGSERIAL Serial
 #endif
 #endif
